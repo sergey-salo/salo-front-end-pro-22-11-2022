@@ -100,3 +100,34 @@ for (const item of outputArr) {
 
 resultStr = resultStr.slice(0, resultStr.length - 7);
 document.write(`<p>Результат: [</br>${resultStr}</br>]</p>`);
+
+// 4.
+document.write(`<h3>4. Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом.
+'func(" hello world", ['l', 'd'])' поверне нам "heo wor".
+Вихідний рядок та символи для видалення задає користувач.</h3>`);
+
+const typedStr = prompt('Введіть рядок');
+const charStr = prompt('Введіть символи одним словом');
+const charArray = [];
+
+for (const char of charStr) {
+  charArray.push(char);
+}
+
+function deleteCharacters(str, charArr) {
+  let newStr = '';
+
+  for (const char of str) {
+    if (!charArr.includes(char)) {
+      newStr += char;
+    }
+  }
+
+  return newStr;
+}
+
+const result = deleteCharacters(typedStr, charArray);
+
+document.write(
+  `<p>Рядок: "${typedStr}", Символи для видалення: [${charArray.join(', ')}], Вихідний рядок: "${result}"<p>`,
+);
