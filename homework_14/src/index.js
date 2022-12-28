@@ -32,3 +32,35 @@ function getAvarageNumber(inputArr) {
 
 const averageNumber = getAvarageNumber(arr);
 document.write(`<p>Cереднє арифметичне: ${averageNumber}</p>`);
+
+// 2.
+document.write(`<h3>2. Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y, рядок znak.
+   У змінній znak може бути: +, -, *, /, %, ^ (ступінь). Вивести результат математичної дії, вказаної в змінній znak.
+   Обидва числа і знак виходять від користувача.</h3>`);
+
+const firstValue = +prompt('Введіть перше значення', 1);
+const secondValue = +prompt('Введіть друге значення', 1);
+const operationSign = prompt('Введіть знак операціЇ (+, -, *, /, %, ^ (ступінь))', '+');
+
+function doMath(x, znak, y) {
+  const result = `${x} ${znak} ${y} = `
+  switch (znak) {
+    case '+':
+      return result + (x + y);
+    case '-':
+      return result + (x - y);
+    case '*':
+      return result + (x * y);
+    case '/':
+      return result + (x / y);
+    case '%':
+      return result + (x % y);
+    case '^':
+      return result + (x ** y);
+    default:
+      return `Error! Invalid operation value "${znak}".`;
+  }
+}
+
+const mathResult = doMath(firstValue, operationSign, secondValue);
+document.write(`<p>Результат математичної дії: ${mathResult}</p>`);
