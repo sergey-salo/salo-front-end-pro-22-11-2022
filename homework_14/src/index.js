@@ -70,8 +70,8 @@ document.write(`<h3>3. Написати функцію заповнення да
    Довжину основного масиву і внутрішніх масивів задає користувач.
    Значення всіх елементів всіх масивів задає користувач.</h3>`);
 
-const mainArrayLenght = +prompt('Завдання 3. Введіть довжину основного масиву');
-const internalArrayLenght = +prompt('Завдання 3. Введіть довжину внутрішніх масивів');
+const mainArrayLenght = +prompt('Завдання 3. Введіть довжину основного масиву', 3);
+const internalArrayLenght = +prompt('Завдання 3. Введіть довжину внутрішніх масивів', 3);
 
 // 1 варіант реалізації функціоналу
 function createAndFillArray(mainArrLenght, internalArrLenght) {
@@ -81,7 +81,7 @@ function createAndFillArray(mainArrLenght, internalArrLenght) {
     const innerArray = new Array(internalArrLenght);
 
     for (let j = 0; j < innerArray.length; j++) {
-      innerArray[j] = prompt(`Завдання 3. Введіть значення елементу масиву №[${i + 1}][${j + 1}]`);
+      innerArray[j] = prompt(`Завдання 3. Введіть значення елементу масиву №[${i + 1}][${j + 1}]`, i + j);
     }
 
     mainArray[i] = innerArray;
@@ -130,8 +130,8 @@ document.write(`<h3> 4. Створити функцію, яка прибирає
 'func(" hello world", ['l', 'd'])' поверне нам "heo wor".
 Вихідний рядок та символи для видалення задає користувач.</h3>`);
 
-const typedStr = prompt('Завдання 4. Введіть рядок');
-const charStr = prompt('Завдання 4. Введіть символи одним словом');
+const typedStr = prompt('Завдання 4. Введіть рядок', 'Hello world');
+const charStr = prompt('Завдання 4. Введіть символи одним словом', 'elo');
 
 // 1 варіант
 // const charArray = [];
