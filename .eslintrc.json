@@ -12,8 +12,12 @@
     "linebreak-style": ["warn", "windows"],
     "no-console": "off",
     "no-alert": "off",
-    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-    "no-unused-expressions": ["error", { "allowShortCircuit": true }],
-    "max-len": ["error", { "code": 120 }]
+    "no-plusplus": "off",
+    // "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }],
+    "max-len": [
+      "error",
+      { "code": 120, "ignoreComments": true, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreUrls": true }
+    ]
   }
 }
